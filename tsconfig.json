@@ -1,0 +1,12 @@
+{
+  "extends": "./.wxt/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+    "types": ["chrome", "react", "react-dom", "vitest/globals"]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "resumepilot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first browser extension for safely filling job application forms.",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:edge": "wxt --browser edge",
+    "build": "wxt build",
+    "build:edge": "wxt build --browser edge",
+    "zip": "wxt zip",
+    "zip:edge": "wxt zip --browser edge",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "smoke:chromium": "node scripts/browser-smoke.mjs",
+    "check": "npm run format:check && npm run typecheck && npm run test && npm run build && npm run build:edge"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "mammoth": "^1.12.2",
+    "pdfjs-dist": "^6.3.289",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.6.2"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.2.9",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitest/coverage-v8": "^5.0.0",
+    "@wxt-dev/module-react": "^1.2.2",
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.0",
+    "wxt": "^0.21.4"
+  }
+}

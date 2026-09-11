@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>星海科技 - AI Agent 开发工程师（虚构测试）</title>
+    <style>
+      body {
+        font: 16px system-ui;
+        margin: 40px auto;
+        max-width: 760px;
+      }
+      label,
+      fieldset {
+        display: block;
+        margin: 16px 0;
+      }
+      input,
+      select,
+      textarea {
+        box-sizing: border-box;
+        display: block;
+        margin-top: 6px;
+        padding: 8px;
+        width: 100%;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        display: inline;
+        width: auto;
+      }
+      button {
+        margin: 16px 8px 0 0;
+        padding: 10px 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>AI Agent 开发工程师</h1>
+      <section class="job-description">
+        这是一个完全虚构的职位页面，用于 ResumePilot 本地回归测试。岗位负责大模型 Agent
+        应用开发、工具调用和评测，不代表任何真实公司。
+      </section>
+      <form
+        onsubmit="
+          event.preventDefault();
+          document.querySelector('#result').textContent = '测试表单已由用户提交';
+        "
+      >
+        <label>姓名（必填）<input name="candidate_name" required /></label>
+        <label>手机号（必填）<input name="mobile" required /></label>
+        <label>Email <input name="email" type="email" /></label>
+        <label>毕业院校 <input name="school" /></label>
+        <label>专业 <input name="major" /></label>
+        <label
+          >期望工作地点
+          <select name="location">
+            <option value="">请选择</option>
+            <option>北京</option>
+            <option>上海</option>
+            <option>深圳</option>
+          </select>
+        </label>
+        <label>自我评价 <textarea name="self_evaluation"></textarea></label>
+        <label>上传简历 <input name="resume" type="file" accept="application/pdf" /></label>
+        <button type="button">保存并继续</button>
+        <button type="submit">确认提交</button>
+      </form>
+      <p id="result"></p>
+    </main>
+  </body>
+</html>

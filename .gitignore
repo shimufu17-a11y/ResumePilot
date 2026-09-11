@@ -1,0 +1,16 @@
+node_modules/
+.output/
+.wxt/
+coverage/
+dist/
+.tools/
+.browser-test/
+*.log
+.env
+.env.*
+!.env.example
+
+# Real resumes and local test data must never be committed.
+private/
+fixtures/private/
+*.local.json

@@ -1,0 +1,7 @@
+.output/
+.wxt/
+.tools/
+.browser-test/
+node_modules/
+package-lock.json
+

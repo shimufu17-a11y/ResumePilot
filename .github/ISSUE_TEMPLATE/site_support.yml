@@ -1,0 +1,35 @@
+name: 招聘网站兼容问题
+description: 报告字段识别或网站适配问题（禁止提交真实个人资料）
+title: "[Site] "
+labels: ["site-support"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请只提供脱敏信息。不要上传真实简历、手机号、邮箱、身份证号、Cookie、令牌或 API Key。
+  - type: input
+    id: site
+    attributes:
+      label: 网站或招聘系统
+      placeholder: 例如 Moka / Workday
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: 浏览器与版本
+    validations:
+      required: true
+  - type: textarea
+    id: field
+    attributes:
+      label: 脱敏后的字段标签和控件类型
+      description: 只描述结构，不要填写实际值。
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: 实际行为与预期行为
+    validations:
+      required: true
