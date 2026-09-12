@@ -54,11 +54,7 @@ export async function encryptBytes(
   const iv = randomBytes(12);
   const algorithm: AesGcmParams = { name: "AES-GCM", iv };
   if (context) algorithm.additionalData = encoder.encode(context);
-  const ciphertext = await crypto.subtle.encrypt(
-    algorithm,
-    key,
-    value
-  );
+  const ciphertext = await crypto.subtle.encrypt(algorithm, key, value);
   return {
     iv: bytesToBase64(iv),
     ciphertext: bytesToBase64(new Uint8Array(ciphertext))
@@ -72,11 +68,7 @@ export async function decryptBytes(
 ): Promise<Uint8Array<ArrayBuffer>> {
   const algorithm: AesGcmParams = { name: "AES-GCM", iv: base64ToBytes(value.iv) };
   if (context) algorithm.additionalData = encoder.encode(context);
-  const plaintext = await crypto.subtle.decrypt(
-    algorithm,
-    key,
-    base64ToBytes(value.ciphertext)
-  );
+  const plaintext = await crypto.subtle.decrypt(algorithm, key, base64ToBytes(value.ciphertext));
   return new Uint8Array(plaintext);
 }
 
