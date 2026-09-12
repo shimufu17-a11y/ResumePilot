@@ -52,12 +52,10 @@ export async function encryptBytes(
   context?: string
 ): Promise<EncryptedValue> {
   const iv = randomBytes(12);
+  const algorithm: AesGcmParams = { name: "AES-GCM", iv };
+  if (context) algorithm.additionalData = encoder.encode(context);
   const ciphertext = await crypto.subtle.encrypt(
-    {
-      name: "AES-GCM",
-      iv,
-      additionalData: context ? encoder.encode(context) : undefined
-    },
+    algorithm,
     key,
     value
   );
@@ -72,12 +70,10 @@ export async function decryptBytes(
   key: CryptoKey,
   context?: string
 ): Promise<Uint8Array<ArrayBuffer>> {
+  const algorithm: AesGcmParams = { name: "AES-GCM", iv: base64ToBytes(value.iv) };
+  if (context) algorithm.additionalData = encoder.encode(context);
   const plaintext = await crypto.subtle.decrypt(
-    {
-      name: "AES-GCM",
-      iv: base64ToBytes(value.iv),
-      additionalData: context ? encoder.encode(context) : undefined
-    },
+    algorithm,
     key,
     base64ToBytes(value.ciphertext)
   );
