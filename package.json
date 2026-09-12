@@ -5,6 +5,7 @@
   "description": "Local-first browser extension for safely filling job application forms.",
   "type": "module",
   "scripts": {
+    "postinstall": "wxt prepare",
     "dev": "wxt",
     "dev:edge": "wxt --browser edge",
     "build": "wxt build",
